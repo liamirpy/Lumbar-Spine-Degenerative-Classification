@@ -7,6 +7,9 @@ he aim is to simulate a radiologist's diagnostic process, helping to identify an
 
 This repository is for solving the kaggle competition and the link of this competition is : 
 
-[Link Text](https://www.kaggle.com/competitions/rsna-2024-lumbar-spine-degenerative-classification/overview)
+[RSNA 2024 Lumbar Spine Degenerative Classification](https://www.kaggle.com/competitions/rsna-2024-lumbar-spine-degenerative-classification/overview)
+
+
 You can download the dataset from the link above.
+
 
