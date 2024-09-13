@@ -152,3 +152,23 @@ The code for this purpose are available in directory [Data_cleaning](./Data_clea
 > You need to put the data (all the folders and csv file) in the main directory of this repository.
 
 
+The output is the csv file named:
+
+ dataset_description.csv
+
+
+ the columns are : 
+
+ - study_id
+ - series_id
+ - instance_number
+ - condition
+ - level
+ - x
+ - y
+ - series_description
+ - score
+
+
+
+
