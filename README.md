@@ -145,3 +145,10 @@ create and save new csv file. The data that we want to add to this csv file are:
 
 
 The code for this purpose are available in directory [Data_cleaning](./Data_cleaning/)directory.
+
+
+
+> [!IMPORTANT]
+> You need to put the data (all the folders and csv file) in the main directory of this repository.
+
+
