@@ -82,7 +82,7 @@ Classification: Pass the extracted ROI through the classifier model to predict t
 
 
 
-## Detector Model
+## Condition Detector Model
 
 
 One of the most popular models for segmentation and detection is YOLO, which is trained on large datasets and is known for its speed.
@@ -192,9 +192,38 @@ The code for this purpose are available in directory [Data_splitting](./Data_spl
 
 
 
-# Convert dcm to png 
+# Data prepration for Condition Detector Model
 
-In this part we want to convert dcm to png images for each csv file and save the data. 
+After we splitted the data based on the condition, we want to prepare data for training.
+In classification model the number of sample for each class should be balance to prevent overfitting.
+
+
+In this specific dataset, when we splitted the data based on the condition, the number of sample in some how are balanced.
+
+Pay attention that if we extended the classed to severity score, the number of sample are not balance and the model maybe not train very well, So In the detection part we do not need data augmentation, but in next part we will need( will explain in the following readme)
+
+
+> [!IMPORTANT]
+> The model that we want to use is YOLO version 8.0. 
+
+
+## Approach
+
+for each condition we have a csv file, we read that csv file and find the subject and it's instance number and save that image in specific directory.
+
+For example : 
+
+- Read : Neural_Foraminal_Narrowing.csv
+- read : study_id and series_idm instance
+- read : all the dcm files in that directory for only the instance
+
+- save : Save that instance (by averaging over all dcm in that instance)
+- save : Save the text file for that instance 
+
+
+
+
+The code for this purpose are available in directory [Detector_data](./Detector_data/)directory.
 
 
 
