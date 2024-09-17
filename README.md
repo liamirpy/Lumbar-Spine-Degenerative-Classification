@@ -144,7 +144,7 @@ create and save new csv file. The data that we want to add to this csv file are:
 - severity score (from: train.csv file)
 
 
-The code for this purpose are available in directory [Data_cleaning](./Data_cleaning/)directory.
+The code for this purpose are available in directory [Data_Cleaning](./Data_cleaning/)directory.
 
 
 
@@ -170,7 +170,7 @@ The output is the csv file named:
  - score
 
 
-# Data Spliting
+# Data condition Spliting
 
 After the previous part that we create a single csv file that includes all the data that we want to use it, 
 now we want to splitted this data to seperated csv file for each condition. (The left and right condition are in same group)
@@ -184,7 +184,7 @@ At the final we have three csv file:
 - Spinal_Canal_Stenosis.csv
 
 
-The code for this purpose are available in directory [Data_splitting](./Data_splitting/)directory.
+The code for this purpose are available in directory [Data_Condition_Splitting](./Data_splitting/)directory.
 
 
 
@@ -192,38 +192,66 @@ The code for this purpose are available in directory [Data_splitting](./Data_spl
 
 
 
-# Data prepration for Condition Detector Model
-
-After we splitted the data based on the condition, we want to prepare data for training.
-In classification model the number of sample for each class should be balance to prevent overfitting.
 
 
-In this specific dataset, when we splitted the data based on the condition, the number of sample in some how are balanced.
 
-Pay attention that if we extended the classed to severity score, the number of sample are not balance and the model maybe not train very well, So In the detection part we do not need data augmentation, but in next part we will need( will explain in the following readme)
+
+
+
+
+
+
+
+
+
+
+# Condition Detector Model (cross-validation,preparing data, training)
+
+
+For training and evaluation model, the various cross-validation approach developed. For this dataset, we 
+develop k-fold cross-validation. The fold seperated based on the classes (condition + level)
+
+After we splitted the data based on the k-fold, we want to prepare data for training.
+For preparing the data for YOLO v.8 the data should be in this structure:
+
+
+datasets/
+│
+├── train/
+│   ├── images/
+│   │   ├── image1.png
+│   │   ├── image2.png
+│   │   └── ...
+│   └── labels/
+│       ├── image1.txt
+│       ├── image2.txt
+│       └── ...
+│
+├── val/
+│   ├── images/
+│   │   ├── image1.png
+│   │   ├── image2.png
+│   │   └── ...
+│   └── labels/
+│       ├── image1.txt
+│       ├── image2.txt
+│       └── ...
+│
+└── yolo_config.yaml
+
+we convert the dcm to png with normalization, and we calculate the label for each image and save it as .txt format.
+
+The format of label should be :
+
+class_id center_x center_y width height
+
 
 
 > [!IMPORTANT]
 > The model that we want to use is YOLO version 8.0. 
 
 
-## Approach
-
-for each condition we have a csv file, we read that csv file and find the subject and it's instance number and save that image in specific directory.
-
-For example : 
-
-- Read : Neural_Foraminal_Narrowing.csv
-- read : study_id and series_idm instance
-- read : all the dcm files in that directory for only the instance
-
-- save : Save that instance (by averaging over all dcm in that instance)
-- save : Save the text file for that instance 
-
-
-
-
-The code for this purpose are available in directory [Detector_data](./Detector_data/)directory.
+The code for this purpose are available in directory [Detector_Model](./Detector_data/)directory.
 
 
 
