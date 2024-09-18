@@ -246,9 +246,23 @@ The format of label should be :
 class_id center_x center_y width height
 
 
+## Cross-validation
+
+for cross-validation, we read each condition csv file and based on the classed that is condition+level, we seperated the data to K-fold. the k here is 5.
+
+For each condition the single csv file will create and added two column : calss_id and folds.
+
+
+
 
 > [!IMPORTANT]
 > The model that we want to use is YOLO version 8.0. 
+
+
+
+
+> [!IMPORTANT]
+> The width of bax is 16.
 
 
 The code for this purpose are available in directory [Detector_Model](./Detector_data/)directory.
@@ -256,3 +270,31 @@ The code for this purpose are available in directory [Detector_Model](./Detector
 
 
 
+
+
+
+## Score Model (Data augmentation, data prepration , training)
+
+In the previous section, we developed the YOLO v8 model for classifying conditions. In this section, we focus on developing another classifier for predicting the severity score (Normal, Moderate, Severe).
+
+For this purpose, we implemented a VGG-based model.
+
+Additionally, due to the imbalance in the number of samples across the classes, we explored two approaches:
+
+1. Data augmentation
+2. A custom loss function based on class distribution
+
+
+## Data Augmentation
+
+Data augmentation is one approach to handling class imbalance. However, the challenge here is that excessive data augmentation can lead to overfitting. In this dataset, the class imbalance is severe for each condition. If we apply too much data augmentation, the model may overfit.
+
+To address this, we approached the imbalance as follows: We have three classes—one majority class and two minority classes. Our strategy is to augment the first minority class until it reaches one-third(1/3) of the size of the majority class, and augment the second minority class until it reaches half(1/2) the size of the majority class.
+
+We then applied a custom loss function designed to account for the class distribution.
+
+
+
+## Cross_validation
+
+For cross-validation, we split the data into k-folds. In each fold, the split was done based on the dataset distribution, meaning that in the first step, we divided the data into k-folds where each fold maintained the same class distribution as the total dataset for that condition. Data augmentation was then applied to the training folds, but not to the evaluation fold. This ensures that the evaluation data remains untouched by augmentation.

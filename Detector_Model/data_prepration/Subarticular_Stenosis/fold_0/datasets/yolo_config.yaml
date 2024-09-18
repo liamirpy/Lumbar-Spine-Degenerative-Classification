@@ -1,0 +1,14 @@
+names:
+- Left_Subarticular_Stenosis_L1_L2
+- Left_Subarticular_Stenosis_L2_L3
+- Left_Subarticular_Stenosis_L3_L4
+- Left_Subarticular_Stenosis_L4_L5
+- Left_Subarticular_Stenosis_L5_S1
+- Right_Subarticular_Stenosis_L1_L2
+- Right_Subarticular_Stenosis_L2_L3
+- Right_Subarticular_Stenosis_L3_L4
+- Right_Subarticular_Stenosis_L4_L5
+- Right_Subarticular_Stenosis_L5_S1
+nc: 10
+train: ./train
+val: ./val

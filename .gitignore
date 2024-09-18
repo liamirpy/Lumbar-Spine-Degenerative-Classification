@@ -1,3 +1,7 @@
 # Ingonre dataset folder 
 
+*.png
+
+*.txt
+
 Data

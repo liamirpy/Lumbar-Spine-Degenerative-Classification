@@ -10,7 +10,7 @@ def cross_validation(csv_file,results_name):
 
 
 # Load your CSV file into a pandas DataFrame
-    df = pd.read_csv('../../Data_Condition_Splitting/Spinal_Canal_Stenosis.csv')
+    df = pd.read_csv(f'{csv_file}')
 
     # Concatenate 'condition' and 'level' to create a unique class for each combination
     df['condition_level'] = df['condition'] + '_' + df['level']

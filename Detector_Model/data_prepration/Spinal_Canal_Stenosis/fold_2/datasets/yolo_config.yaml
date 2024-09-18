@@ -1,0 +1,9 @@
+names:
+- Spinal_Canal_Stenosis_L1_L2
+- Spinal_Canal_Stenosis_L2_L3
+- Spinal_Canal_Stenosis_L3_L4
+- Spinal_Canal_Stenosis_L4_L5
+- Spinal_Canal_Stenosis_L5_S1
+nc: 5
+train: ./train
+val: ./val

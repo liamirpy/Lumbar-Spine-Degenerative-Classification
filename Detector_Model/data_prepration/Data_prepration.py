@@ -199,9 +199,12 @@ class Detector_data_prepration:
 
         self.validation_data = df[df['fold'] == self.val_fold]
 
+        print('len val',len(self.validation_data))
+
         self.training_data = df[df['fold'] != self.val_fold]
 
 
+        print('len train',len(self.training_data))
 
 
 
@@ -484,7 +487,7 @@ for fold in range(5):
 
         
 
-        csv_directory='../cross_validation/Spinal_Canal_Stenosis.csv',
+        csv_directory='../cross_validation/Spinal_Canal_Stenosis_folds.csv',
 
         condition_name='Spinal_Canal_Stenosis',
         
@@ -493,7 +496,7 @@ for fold in range(5):
         condition_level_classes=condition_level_classes_spinal_canal,
 
 
-        val_fold=1,
+        val_fold=fold,
 
 
         width_box=16,
@@ -504,6 +507,9 @@ for fold in range(5):
         )
 
 
+
+
+print('Spinal canal stenosis  DONE')
 
 
 
@@ -553,7 +559,7 @@ for fold in range(5):
 
         
 
-        csv_directory='../cross_validation/Subarticular_Stenosis.csv',
+        csv_directory='../cross_validation/Subarticular_Stenosis_folds.csv',
 
         condition_name='Subarticular_Stenosis',
         
@@ -562,7 +568,7 @@ for fold in range(5):
         condition_level_classes=condition_level_classes_spinal_canal,
 
 
-        val_fold=1,
+        val_fold=fold,
 
 
         width_box=16,
@@ -579,11 +585,12 @@ for fold in range(5):
 
 
 
+print('Subarticular_Stenosis  DONE')
 
 
 
 
-#### Left Neural Foraminal Narrowing
+# ####  Neural Foraminal Narrowing
 
 
 
@@ -627,7 +634,7 @@ for fold in range(5):
 
         
 
-        csv_directory='../cross_validation/Neural_Foraminal_Narrowing.csv',
+        csv_directory='../cross_validation/Neural_Foraminal_Narrowing_folds.csv',
 
         condition_name='Left Neural Foraminal Narrowing',
         
@@ -636,7 +643,7 @@ for fold in range(5):
         condition_level_classes=condition_level_classes_spinal_canal,
 
 
-        val_fold=1,
+        val_fold=fold,
 
 
         width_box=16,
@@ -652,6 +659,7 @@ for fold in range(5):
 
 
 
+print(' Neural Foraminal Narrowing  DONE')
 
 
 

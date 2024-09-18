@@ -1,0 +1,14 @@
+names:
+- Left_Neural_Foraminal_Narrowing_L1_L2
+- Left_Neural_Foraminal_Narrowing_L2_L3
+- Left_Neural_Foraminal_Narrowing_L3_L4
+- Left_Neural_Foraminal_Narrowing_L4_L5
+- Left_Neural_Foraminal_Narrowing_L5_S1
+- Right_Neural_Foraminal_Narrowing_L1_L2
+- Right_Neural_Foraminal_Narrowing_L2_L3
+- Right_Neural_Foraminal_Narrowing_L3_L4
+- Right_Neural_Foraminal_Narrowing_L4_L5
+- Right_Neural_Foraminal_Narrowing_L5_S1
+nc: 10
+train: ./train
+val: ./val
