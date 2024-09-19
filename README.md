@@ -298,3 +298,8 @@ We then applied a custom loss function designed to account for the class distrib
 ## Cross_validation
 
 For cross-validation, we split the data into k-folds. In each fold, the split was done based on the dataset distribution, meaning that in the first step, we divided the data into k-folds where each fold maintained the same class distribution as the total dataset for that condition. Data augmentation was then applied to the training folds, but not to the evaluation fold. This ensures that the evaluation data remains untouched by augmentation.
+
+
+
+
+The code for this purpose are available in directory [Score_Model](./Detector_data/)directory.

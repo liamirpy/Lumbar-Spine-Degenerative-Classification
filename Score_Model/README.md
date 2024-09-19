@@ -46,9 +46,28 @@ The output :
 
 1. Data Splitting: We first split the data into 5 folds, ensuring that each fold maintains the same class distribution as the overall dataset for each condition. This process is part of the cross-validation folder, and the results are stored in CSV files.
 
+The code for this purpose are available in directory [cross_validation](./Detector_data/)directory.
+
+
+
+
 2. Data Augmentation: Data augmentation was applied to the training data. For example, in the first fold, the first fold is used as the validation set, and augmentation is applied to the other folds. The augmented data is recorded in the CSV file, with an additional column indicating the type of augmentation used for each sample.
 
+
+The code for this purpose are available in directory [data_augmentation](./Detector_data/)directory.
+
+
+
+> [!IMPORTANT]
+> We have three classes—one majority class and two minority classes. Our strategy is to augment the first minority class until it reaches one-third of the size of the majority class, and augment the second minority class until it reaches half the size of the majority class.
+
+
+
+
 3. DCM to PNG Conversion: We converted all DICOM files to PNG images for the entire dataset.
+
+
+
 
 4. Model Training: Finally, we trained the model using the prepared data.
 
