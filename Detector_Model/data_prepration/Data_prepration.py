@@ -239,9 +239,6 @@ class Detector_data_prepration:
 
         for study_id, study_group in df.groupby('study_id'):
 
-
-
-
             for series_id, series_group in study_group.groupby('series_id'):
 
 

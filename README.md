@@ -250,17 +250,6 @@ The code for this purpose are available in directory [Detector_Model](./Detector
 
 
 
-## Determining the Optimal Crop Width
-One of the key challenges in this approach is determining the optimal square size to crop each object in the image. With multiple objects close to each other, it becomes important to choose a width that avoids overlap between the cropped regions.
-
-If the square size is too large, the cropped objects may overlap, leading to issues in processing or analysis.
-
-The solution is to develop a method that calculates the optimal width based on the positions of the objects. For each image, the distances between the objects are measured, and the minimum distance is identified. To ensure there is no overlap, the crop width is set slightly smaller than this minimum distanceâ€”specifically, we subtract 5 pixels from the minimum distance to account for any potential overlap.
-
-
-
-
-
 
 
 
@@ -299,12 +288,22 @@ To address this, we approached the imbalance as follows: We have three classesâ€
 We then applied a custom loss function designed to account for the class distribution.
 
 
-
 ## Cross_validation
 
 For cross-validation, we split the data into k-folds. In each fold, the split was done based on the dataset distribution, meaning that in the first step, we divided the data into k-folds where each fold maintained the same class distribution as the total dataset for that condition. Data augmentation was then applied to the training folds, but not to the evaluation fold. This ensures that the evaluation data remains untouched by augmentation.
 
 
 
+## data prepration
+
+
+ in this part, we read each csv file and convert all the row to png format and if there is any data augmentation approach we also apply that augmentation approach for that subjects. 
+
+
+
+
 
 The code for this purpose are available in directory [Score_Model](./Detector_data/)directory.
+
+
+

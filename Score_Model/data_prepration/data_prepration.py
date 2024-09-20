@@ -416,6 +416,36 @@ class data_prepration:
 
 
 
+
+
+
+
+# data_prepration(
+    
+    
+    
+    
+#     dataset_directory='../../Data/train_images',
+    
+    
+#     condition='Spinal_Canal_Stenosis',
+
+
+#     csv_directory='../data_augmentation/augmented_output',
+    
+#     num_fold=5,
+
+#     augmentation_list=['rotate', 'horizontal_flip','vertical_flip', 'gaussian_noise']
+
+#     )
+
+
+
+
+
+
+
+
 data_prepration(
     
     
@@ -429,14 +459,33 @@ data_prepration(
 
     csv_directory='../data_augmentation/augmented_output',
     
-
-
     num_fold=5,
-
-
 
     augmentation_list=['rotate', 'horizontal_flip','vertical_flip', 'gaussian_noise']
 
     )
 
 
+
+
+
+
+
+data_prepration(
+    
+    
+    
+    
+    dataset_directory='../../Data/train_images',
+    
+    
+    condition='Subarticular_Stenosis',
+
+
+    csv_directory='../data_augmentation/augmented_output',
+    
+    num_fold=5,
+
+    augmentation_list=['rotate', 'horizontal_flip','vertical_flip', 'gaussian_noise']
+
+    )
