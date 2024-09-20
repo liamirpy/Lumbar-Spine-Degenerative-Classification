@@ -9,7 +9,7 @@ import os
 
 
 
-augmentations = ['Rotation', 'Flip', 'Noise']
+augmentations = ['rotate', 'horizontal_flip','vertical_flip', 'gaussian_noise']
 
 
 

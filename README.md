@@ -82,44 +82,6 @@ Classification: Pass the extracted ROI through the classifier model to predict t
 
 
 
-## Condition Detector Model
-
-
-One of the most popular models for segmentation and detection is YOLO, which is trained on large datasets and is known for its speed.
-
-For each condition, we develop this model separately, and for each condition, we have a different number of output classes.
-
-[!IMPORTANT]
-We train the model for each condition separately, effectively separating the view and condition, because for each condition, we use the same view and modality.
-
-The models we are going to train, along with the number of output classes for each, are as follows:
-
-
-
-|           Condition            |           Number of Output       |    
-| -------------------------------| -------------------------------- |
-|   Neural Foraminal Narrowing   | 2(left/right) * 5(Disc level)= 10| 
-|     Spinal Canal Stenosis      |       1 * 5(Disc level)= 5       |
-|     Subarticular Stenosis      | 2(left/right) * 5(Disc level)= 10|
-
-
-
-
-
-> [!IMPORTANT]
-> We can also add the score severity in number of class, but we want to the model consentrate in this classis and use other model for classifing the severity.
-
-
-
-## Score Classifier Model
-
-For the classifier model, we plan to use the pre-trained VGG-19 model for classification.
-
-Similar to the detector model, we will develop three separate models, one for each condition. (Note that left and right sides are treated as part of the same condition and model.)
-
-
-
-
 
 
 
@@ -191,21 +153,37 @@ The code for this purpose are available in directory [Data_Condition_Splitting](
 
 
 
+## Condition Detector Model
+
+
+One of the most popular models for segmentation and detection is YOLO, which is trained on large datasets and is known for its speed.
+
+For each condition, we develop this model separately, and for each condition, we have a different number of output classes.
+
+[!IMPORTANT]
+We train the model for each condition separately, effectively separating the view and condition, because for each condition, we use the same view and modality.
+
+The models we are going to train, along with the number of output classes for each, are as follows:
+
+
+
+|           Condition            |           Number of Output       |    
+| -------------------------------| -------------------------------- |
+|   Neural Foraminal Narrowing   | 2(left/right) * 5(Disc level)= 10| 
+|     Spinal Canal Stenosis      |       1 * 5(Disc level)= 5       |
+|     Subarticular Stenosis      | 2(left/right) * 5(Disc level)= 10|
 
 
 
 
 
+> [!IMPORTANT]
+> We can also add the score severity in number of class, but we want to the model consentrate in this classis and use other model for classifing the severity.
 
 
 
 
-
-
-
-
-
-# Condition Detector Model (cross-validation,preparing data, training)
+## Condition Detector Model (cross-validation,preparing data, training)
 
 
 For training and evaluation model, the various cross-validation approach developed. For this dataset, we 
@@ -268,6 +246,33 @@ For each condition the single csv file will create and added two column : calss_
 The code for this purpose are available in directory [Detector_Model](./Detector_data/)directory.
 
 
+
+
+
+
+## Determining the Optimal Crop Width
+One of the key challenges in this approach is determining the optimal square size to crop each object in the image. With multiple objects close to each other, it becomes important to choose a width that avoids overlap between the cropped regions.
+
+If the square size is too large, the cropped objects may overlap, leading to issues in processing or analysis.
+
+The solution is to develop a method that calculates the optimal width based on the positions of the objects. For each image, the distances between the objects are measured, and the minimum distance is identified. To ensure there is no overlap, the crop width is set slightly smaller than this minimum distance—specifically, we subtract 5 pixels from the minimum distance to account for any potential overlap.
+
+
+
+
+
+
+
+
+
+
+
+
+# Score Classifier Model
+
+For the classifier model, we plan to use the pre-trained VGG-19 model for classification.
+
+Similar to the detector model, we will develop three separate models, one for each condition. (Note that left and right sides are treated as part of the same condition and model.)
 
 
 

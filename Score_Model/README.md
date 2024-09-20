@@ -64,7 +64,10 @@ The code for this purpose are available in directory [data_augmentation](./Detec
 
 
 
-3. DCM to PNG Conversion: We converted all DICOM files to PNG images for the entire dataset.
+3. DCM to PNG: in this part, we read each csv file and convert all the row to png format and if there is any data augmentation approach we also apply that augmentation approach for that subjects. 
+
+
+
 
 
 
