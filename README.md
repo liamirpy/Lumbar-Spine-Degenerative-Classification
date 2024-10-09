@@ -300,10 +300,104 @@ For cross-validation, we split the data into k-folds. In each fold, the split wa
  in this part, we read each csv file and convert all the row to png format and if there is any data augmentation approach we also apply that augmentation approach for that subjects. 
 
 
-
-
-
 The code for this purpose are available in directory [Score_Model](./Detector_data/)directory.
 
+
+
+
+
+## K-Fold Cross-Validation Results for Neural Foraminal Narrowing
+
+During the training of the model, we used **K-Fold Cross-Validation** to evaluate performance across multiple subsets of the data. Below are the evaluation metrics for each fold:
+
+| Fold  | Accuracy  | Precision | Recall    | F1 Score  |
+|-------|-----------|-----------|-----------|-----------|
+| Fold 0| 0.7801    | 0.8346    | 0.7801    | 0.7984    |
+| Fold 1| 0.7852    | 0.8385    | 0.7852    | 0.8018    |
+| Fold 2| 0.8121    | 0.8208    | 0.8121    | 0.8161    |
+| Fold 3| 0.7976    | 0.8292    | 0.7976    | 0.8096    |
+| Fold 4| 0.7978    | 0.8310    | 0.7978    | 0.8105    |
+
+### Best Performing Fold
+
+Based on the results, **Fold 2** is selected as the best-performing model. Here's why:
+
+- **Highest Accuracy:** Fold 2 achieved the highest accuracy of **0.8121**, indicating it correctly classified the most samples overall.
+- **Best F1 Score:** Fold 2 also has the highest F1 Score of **0.8161**, which is a balance between precision and recall, making it a strong candidate for tasks where both false positives and false negatives are of concern.
+- **Balanced Performance:** While Fold 1 had a slightly higher precision, Fold 2’s overall balance across accuracy, precision, recall, and F1 score makes it the most reliable fold for the final model selection.
+
+This model will be used for further evaluation and deployment due to its superior performance.
+
+
+
+
+
+## K-Fold Cross-Validation Results for Spinal Canal Stenosis
+
+During the training of this model, we used **K-Fold Cross-Validation** to evaluate performance across multiple subsets of the data. Below are the evaluation metrics for each fold:
+
+| Fold  | Accuracy  | Precision | Recall    | F1 Score  |
+|-------|-----------|-----------|-----------|-----------|
+| Fold 0| 0.8954    | 0.9065    | 0.8954    | 0.9002    |
+| Fold 1| 0.8288    | 0.9083    | 0.8288    | 0.8586    |
+| Fold 2| 0.8683    | 0.9062    | 0.8683    | 0.8837    |
+| Fold 3| 0.8928    | 0.9098    | 0.8928    | 0.8997    |
+| Fold 4| 0.8995    | 0.9120    | 0.8995    | 0.9051    |
+
+### Best Performing Fold
+
+Based on the results, **Fold 4** is selected as the best-performing model. Here's why:
+
+- **Highest Accuracy:** Fold 4 achieved the highest accuracy of **0.8995**, indicating it correctly classified the most samples.
+- **Best F1 Score:** Fold 4 also has the highest F1 Score of **0.9051**, which shows its balance between precision and recall.
+- **Highest Precision:** Fold 4 also achieved the highest precision of **0.9120**, meaning it minimizes false positives.
+
+This fold demonstrates superior performance across all key metrics, making it the best candidate for further evaluation and potential deployment.
+
+
+
+
+## K-Fold Cross-Validation Results for Subarticular Stenosis
+
+We used **K-Fold Cross-Validation** to evaluate the performance of this model across multiple data subsets. Below are the evaluation metrics for each fold:
+
+| Fold  | Accuracy  | Precision | Recall    | F1 Score  |
+|-------|-----------|-----------|-----------|-----------|
+| Fold 0| 0.7903    | 0.8212    | 0.7903    | 0.8017    |
+| Fold 1| 0.7494    | 0.8132    | 0.7494    | 0.7700    |
+| Fold 2| 0.7931    | 0.8199    | 0.7931    | 0.8034    |
+| Fold 3| 0.7164    | 0.8205    | 0.7164    | 0.7447    |
+| Fold 4| 0.7205    | 0.8085    | 0.7205    | 0.7468    |
+
+### Best Performing Fold
+
+Based on the results, **Fold 2** is selected as the best-performing fold. Here's why:
+
+- **Highest Accuracy:** Fold 2 achieved the highest accuracy of **0.7931**, indicating that it correctly classified the most samples overall.
+- **Best F1 Score:** Fold 2 also had the best F1 Score of **0.8034**, providing a balance between precision and recall.
+- **Balanced Precision and Recall:** Fold 2 has a strong balance between **precision (0.8199)** and **recall (0.7931)**, making it reliable for both minimizing false positives and maximizing correct classifications.
+
+This fold will be used for further evaluation and potential deployment due to its overall balanced and superior performance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Predictor model 
+
+In this part we combine both model (Condition Detector Model and score model ) as a single model 
+and create a pipline for read the test data that is available in this dataset and return the csv file as a results.
+
+
+
+for each model, we choose the best model that performe across all the cross validation training.
 
 

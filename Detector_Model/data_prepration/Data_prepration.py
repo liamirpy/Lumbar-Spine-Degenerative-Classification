@@ -531,10 +531,6 @@ for fold in range(5):
         'Left_Subarticular_Stenosis_L5_S1':4,
 
 
-
-
-
-
         'Right_Subarticular_Stenosis_L1_L2':5,
 
         'Right_Subarticular_Stenosis_L2_L3':6,
@@ -633,7 +629,7 @@ for fold in range(5):
 
         csv_directory='../cross_validation/Neural_Foraminal_Narrowing_folds.csv',
 
-        condition_name='Left Neural Foraminal Narrowing',
+        condition_name='Neural_Foraminal_Narrowing',
         
         
         

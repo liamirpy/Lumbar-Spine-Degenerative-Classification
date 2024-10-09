@@ -166,8 +166,34 @@ class yolo_training:
 
 
 
+import argparse
 
-            
+parser = argparse.ArgumentParser(description='Model Training Parameters')  
+
+
+parser = argparse.ArgumentParser(description='Model Training Parameters')  
+
+parser.add_argument('--data_directory', type=str, help='data that prepare for train directory')
+
+parser.add_argument('--condition', type=str, help='condition')
+
+parser.add_argument('--results_directory', type=str, help='Results directory')
+
+parser.add_argument('--epochs', type=int, default=50, help='Number of epochs')
+
+parser.add_argument('--fold', type=int, default=0, help='the fold that you want to train')
+
+parser.add_argument('--patients', type=int, default=5, help='Number of patients')
+
+parser.add_argument('--batch', type=int, default=4, help='Batch size')
+
+args=parser.parse_args()
+
+
+
+
+args=parser.parse_args()
+   
 
 
 
@@ -192,29 +218,6 @@ yolo_training(
 
 
 
-import argparse
 
 
-parser = argparse.ArgumentParser(description='Model Training Parameters')  
-
-parser.add_argument('--data_directory', type=str, help='data that prepare for train directory')
-
-parser.add_argument('--condition', type=str, help='condition')
-
-parser.add_argument('--results_directory', type=str, help='Results directory')
-
-parser.add_argument('--epochs', type=int, default=50, help='Number of epochs')
-
-parser.add_argument('--fold', type=int, default=0, help='the fold that you want to train')
-
-parser.add_argument('--patients', type=int, default=5, help='Number of patients')
-
-parser.add_argument('--batch', type=int, default=4, help='Batch size')
-
-args=parser.parse_args()
-
-
-
-
-
-# python3 train.py --data_directory  ../data_prepration  --condition Spinal_Canal_Stenosis  --epochs 500  --fold 0 --patients 20 --batch 4
+# python3 train.py --data_directory  ../data_prepration  --condition Spinal_Canal_Stenosis -- results_directory ./results --epochs 500  --fold 0 --patients 20 --batch 4

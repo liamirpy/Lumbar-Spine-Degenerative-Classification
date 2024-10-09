@@ -1,5 +1,4 @@
 study_id,series_id,instance_number,condition,level,x,y,series_description,score,fold,augmentation
-
 3532637184,380067370,4,Left Neural Foraminal Narrowing,L2/L3,250.06392694063928,229.8934550989345,Sagittal T1,Normal/Mild,4,
 3532637184,380067370,4,Left Neural Foraminal Narrowing,L3/L4,240.7123287671233,270.4170471841705,Sagittal T1,Normal/Mild,1,
 3532637184,380067370,11,Right Neural Foraminal Narrowing,L2/L3,254.92134831460675,230.8314606741573,Sagittal T1,Normal/Mild,1,

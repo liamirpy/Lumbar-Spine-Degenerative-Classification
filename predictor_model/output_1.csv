@@ -1,0 +1,26 @@
+row_id,normal_mild,moderate,severe
+44036939_left_subarticular_stenosis_l1_l2,0.5580876,0.42469987,0.017212477
+44036939_left_subarticular_stenosis_l2_l3,0.4934402,0.3835948,0.12296503
+44036939_left_subarticular_stenosis_l3_l4,0.43169117,0.45046154,0.11784727
+44036939_left_subarticular_stenosis_l4_l5,0.11126637,0.41072077,0.47801277
+44036939_left_subarticular_stenosis_l5_s1,0.5323766,0.41346958,0.054153785
+44036939_right_subarticular_stenosis_l1_l2,0.5689144,0.3835391,0.047546513
+44036939_right_subarticular_stenosis_l2_l3,0.50544167,0.37713793,0.11742041
+44036939_right_subarticular_stenosis_l3_l4,0.61107093,0.32859448,0.06033461
+44036939_right_subarticular_stenosis_l4_l5,0.49262252,0.38183156,0.12554592
+44036939_right_subarticular_stenosis_l5_s1,0.6596228,0.3030851,0.037292134
+44036939_left_neural_foraminal_narrowing_l1_l2,0.6634597,0.3329332,0.003607116
+44036939_left_neural_foraminal_narrowing_l2_l3,0,0,0
+44036939_left_neural_foraminal_narrowing_l3_l4,0.076800294,0.3352918,0.5879079
+44036939_left_neural_foraminal_narrowing_l4_l5,0.224731,0.6117837,0.16348527
+44036939_left_neural_foraminal_narrowing_l5_s1,0.4258563,0.49292734,0.08121633
+44036939_right_neural_foraminal_narrowing_l1_l2,0,0,0
+44036939_right_neural_foraminal_narrowing_l2_l3,0,0,0
+44036939_right_neural_foraminal_narrowing_l3_l4,0,0,0
+44036939_right_neural_foraminal_narrowing_l4_l5,0,0,0
+44036939_right_neural_foraminal_narrowing_l5_s1,0,0,0
+44036939_spinal_canal_stenosis_l1_l2,[    0.39757     0.49234     0.11009]
+44036939_spinal_canal_stenosis_l2_l3,[    0.25183     0.38235     0.36582]
+44036939_spinal_canal_stenosis_l3_l4,[    0.81695      0.1638    0.019253]
+44036939_spinal_canal_stenosis_l4_l5,[   0.035285     0.34921     0.61551]
+44036939_spinal_canal_stenosis_l5_s1,[    0.35786     0.50576     0.13638]
