@@ -188,12 +188,7 @@ class training:
 
 
     def model_architecture(self,image_size):
-        """
-        Build the RAX_NET model.
-        
-        Returns:
-        - model: Keras Model, the constructed neural network model
-        """
+      
         
         # Input layer with specified image size and a single channel
         input_layer = Input(shape=image_size + (3,))

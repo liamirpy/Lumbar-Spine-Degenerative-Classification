@@ -1,5 +1,5 @@
-# Lumbar-Spine-Degenerative-Classification
-
+# Lumbar Spine Degenerative Classification Using YOLO v8 and DeepScoreNet
+ 
 This repository focuses on developing models for the detection and classification of degenerative spine conditions using lumbar spine MR images.
 
 he aim is to simulate a radiologist's diagnostic process, helping to identify and assess the severity of conditions such as neural foraminal narrowing, subarticular stenosis, and spinal canal stenosis. This project is part of a competition to build models that enhance the accuracy and efficiency of diagnosing these spine conditions
@@ -375,7 +375,7 @@ The code for this purpose are available in directory [Detector_Model](./Detector
 
 # Score Classifier Model
 
-For the classifier model, we plan to use the modified VGG-19 model for classification.
+For the classifier model, we plan to use the DeepScoreNet model for classification.
 
 Similar to the detector model, we will develop three separate models, one for each condition. (Note that left and right sides are treated as part of the same condition and model.)
 
@@ -383,11 +383,11 @@ Similar to the detector model, we will develop three separate models, one for ea
 
 
 
-## Score Model (Data augmentation, data prepration , training)
+## Score Model-DeepScoreNet (Data augmentation, data prepration , training)
 
 In the previous section, we developed the YOLO v8 model for classifying conditions. In this section, we focus on developing another classifier for predicting the severity score (Normal, Moderate, Severe).
 
-For this purpose, we implemented a VGG-based model.
+For this purpose, we implemented a DeepScoreNet model.
 
 Additionally, due to the imbalance in the number of samples across the classes, we explored two approaches:
 
@@ -422,7 +422,7 @@ The code for this purpose are available in directory [Score_Model](./Detector_da
 
 
 
-## K-Fold Cross-Validation Results for Neural Foraminal Narrowing
+## K-Fold Cross-Validation Results for 0/88
 
 During the training of the model, we used **K-Fold Cross-Validation** to evaluate performance across multiple subsets of the data. Below are the evaluation metrics for each fold:
 
