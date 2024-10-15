@@ -153,7 +153,7 @@ The code for this purpose are available in directory [Data_Condition_Splitting](
 
 
 
-## Condition Detector Model
+# Condition Detector Model
 
 
 One of the most popular models for segmentation and detection is YOLO, which is trained on large datasets and is known for its speed.
@@ -183,7 +183,7 @@ The models we are going to train, along with the number of output classes for ea
 
 
 
-## Condition Detector Model (cross-validation,preparing data, training)
+### Condition Detector Model (cross-validation,preparing data, training)
 
 
 For training and evaluation model, the various cross-validation approach developed. For this dataset, we 
@@ -224,7 +224,7 @@ The format of label should be :
 class_id center_x center_y width height
 
 
-## Cross-validation
+### Cross-validation
 
 for cross-validation, we read each condition csv file and based on the classed that is condition+level, we seperated the data to K-fold. the k here is 5.
 
@@ -248,8 +248,124 @@ The code for this purpose are available in directory [Detector_Model](./Detector
 
 
 
+## K-Fold Cross-Validation Results (YOLO v8) for Neural Foraminal Narrowing
 
 
+### Fold 0 
+
+
+![Figure](./image/Neural_Foraminal_Narrowing_fold_0.jpg)
+
+
+
+### Fold 1
+
+
+![Figure](./image/Neural_Foraminal_Narrowing_fold_1.jpg)
+
+
+
+### Fold 2
+
+
+![Figure](./image/Neural_Foraminal_Narrowing_fold_2.jpg)
+
+
+
+### Fold 3 
+
+
+![Figure](./image/Neural_Foraminal_Narrowing_fold_3.jpg)
+
+
+
+### Fold 4
+
+
+![Figure](./image/Neural_Foraminal_Narrowing_fold_4.jpg)
+
+
+
+
+## K-Fold Cross-Validation Results (YOLO v8) for Spinal Canal Stenosis
+
+
+
+
+### Fold 0 
+
+
+![Figure](./image/Spinal_Canal_Stenosis_fold_0.jpg)
+
+
+
+
+### Fold 1 
+
+
+![Figure](./image/Spinal_Canal_Stenosis_fold_1.jpg)
+
+
+
+### Fold 2 
+
+
+![Figure](./image/Spinal_Canal_Stenosis_fold_2.jpg)
+
+
+
+### Fold 3 
+
+
+![Figure](./image/Spinal_Canal_Stenosis_fold_3.jpg)
+
+
+
+### Fold 4
+
+
+![Figure](./image/Spinal_Canal_Stenosis_fold_4.jpg)
+
+
+
+
+
+
+
+## K-Fold Cross-Validation Results (YOLO v8) for Subarticular Stenosis
+
+
+
+
+### Fold 0 
+
+
+![Figure](./image/Subarticular_Stenosis_fold_0.jpg)
+
+
+
+### Fold 1 
+
+
+![Figure](./image/Subarticular_Stenosis_fold_1.jpg)
+
+
+### Fold 2 
+
+
+![Figure](./image/Subarticular_Stenosis_fold_2.jpg)
+
+### Fold 3 
+
+
+![Figure](./image/Subarticular_Stenosis_fold_3.jpg)
+
+
+
+### Fold 4
+
+
+![Figure](./image/Subarticular_Stenosis_fold_4.jpg)
 
 
 
@@ -259,7 +375,7 @@ The code for this purpose are available in directory [Detector_Model](./Detector
 
 # Score Classifier Model
 
-For the classifier model, we plan to use the pre-trained VGG-19 model for classification.
+For the classifier model, we plan to use the modified VGG-19 model for classification.
 
 Similar to the detector model, we will develop three separate models, one for each condition. (Note that left and right sides are treated as part of the same condition and model.)
 
